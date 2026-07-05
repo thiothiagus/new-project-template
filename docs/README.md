@@ -31,6 +31,6 @@ Este documento contém informações gerais para os usuários do projeto, como c
 
 ## Conteúdo relacionado
 
-- `.ai-context/00-overview.md` — Visão geral alinhada à IA
+- `.ai-context/project/overview.md` — Visão geral alinhada à IA
 - `.ai-context/decisions/` — Decisões arquiteturais já tomadas
 - Scripts nos diretórios `scripts/` para implantação, CI/CD e operações de rotina

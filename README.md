@@ -14,5 +14,19 @@ Repositório-template pessoal para iniciar novos projetos já com uma estrutura 
 3. Responda as perguntas (nome do projeto, descrição, tipo de projeto).
 4. Remova a pasta `.git` herdada e inicialize um repositório novo, se necessário.
 
-## Estrutura
-Veja `AGENTS.md` para o guia de contexto usado pelos agentes de IA, e `.ai-context/` para o conteúdo em si.
+## Estrutura do contexto IA
+
+```
+.ai-context/
+├── project/          # Visão geral, roadmap, glossário, modelo de negócio
+├── architecture/     # Stack, diagramas, backend, frontend, banco, infra, integrações
+├── domain/           # Regras de negócio, entidades, normalização
+├── engineering/      # Convenções, testes, segurança, performance, workflows, setup
+├── agents/           # Perfis especializados para agentes de IA
+├── decisions/        # Decisões arquiteturais (ADRs)
+├── sessions/         # Continuidade entre sessões de IA
+├── tasks/            # Backlog e tarefas concluídas
+└── prompts/          # Prompts reutilizáveis (code review, debugging, refactoring)
+```
+
+Veja `AGENTS.md` para o guia de leitura e orquestração dos agentes.

@@ -15,7 +15,7 @@
 - Sem mensagens de commit "WIP"
 
 ### Workflow
-1. Crie um branch a partir de `main`
+1. Crie um branch a partir da branch base do projeto (`main` ou `dev`)
 2. Faça commits com mensagens descritivas
 3. Execute os testes locaismente antes do push
 4. Abra um PR para revisão

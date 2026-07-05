@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .idea/
 .DS_Store
 .env
