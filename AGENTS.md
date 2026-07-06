@@ -36,8 +36,11 @@ Ponto de entrada para qualquer agente de IA (Claude Code, OpenCode, Antigravity,
 20. `engineering/setup.md` — Setup do ambiente
 21. `project/glossary.md` — Glossário de domínio
 22. `project/business-model.md` — Modelo de negócio (se aplicável)
-23. `agents/` — Perfis de agentes especializados (consulte conforme seu papel)
-24. `decisions/` — Decisões arquiteturais já tomadas
+23. `ui/design-system.md` — Tokens visuais e filosofia (se houver UI)
+24. `ui/ui-rules.md` — Regras obrigatórias de interface (se houver UI)
+25. `ui/component-standards.md` — Padrões de componentes e acessibilidade (se houver UI)
+26. `agents/` — Perfis de agentes especializados (consulte conforme seu papel)
+27. `decisions/` — Decisões arquiteturais já tomadas
 
 ## Regras globais
 - Nunca faça commit de segredos (chaves, tokens, senhas).

@@ -22,6 +22,7 @@ Repositório-template pessoal para iniciar novos projetos já com uma estrutura 
 ├── architecture/     # Stack, diagramas, backend, frontend, banco, infra, integrações
 ├── domain/           # Regras de negócio, entidades, normalização
 ├── engineering/      # Convenções, testes, segurança, performance, workflows, setup
+├── ui/               # Design system, regras de UI, padrões de componentes (se houver UI)
 ├── agents/           # Perfis especializados para agentes de IA
 ├── decisions/        # Decisões arquiteturais (ADRs)
 ├── sessions/         # Continuidade entre sessões de IA

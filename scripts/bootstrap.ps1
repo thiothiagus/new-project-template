@@ -40,7 +40,7 @@ switch ($STACK_CHOICE) {
 
 Write-Host "
 Substituindo placeholders..."
-Get-ChildItem -File -Recurse -Filter "*.md" | Where-Object { $_.FullName -notmatch "\\stacks\\" -and $_.FullName -notmatch "restructure-project" } | ForEach-Object {
+Get-ChildItem -File -Recurse -Filter "*.md" | Where-Object { $_.FullName -notmatch "\\stacks\\" -and $_.FullName -notmatch "\\decisions\\" } | ForEach-Object {
     $filePath = $_.FullName
     $content = Get-Content -LiteralPath $filePath -Raw
     $content = $content -replace "{{PROJECT_NAME}}", $PROJECT_NAME

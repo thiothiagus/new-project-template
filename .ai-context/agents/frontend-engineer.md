@@ -7,6 +7,7 @@ Implementar interfaces, componentes, páginas, fluxos de navegação, estado do 
 - `architecture/tech-stack.md` — frameworks e ferramentas
 - `architecture/frontend.md` — arquitetura específica do frontend
 - `architecture/overview.md` — visão geral dos componentes
+- `ui/component-standards.md` — estrutura e estados de componentes (quando houver UI)
 - `engineering/conventions.md` — padrões de código
 - `engineering/testing.md` — padrões de teste
 

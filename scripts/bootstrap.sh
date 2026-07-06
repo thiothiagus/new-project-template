@@ -39,7 +39,7 @@ esac
 
 echo ""
 echo "Substituindo placeholders..."
-find . -type f -name "*.md" -not -path "./stacks/*" -not -path "./.ai-context/prompts/restructure-project.md" | while read -r file; do
+find . -type f -name "*.md" -not -path "./stacks/*" -not -path "./.ai-context/decisions/*" | while read -r file; do
   sed -i.bak \
     -e "s/{{PROJECT_NAME}}/${PROJECT_NAME}/g" \
     -e "s/{{PROJECT_DESCRIPTION}}/${PROJECT_DESCRIPTION}/g" \

@@ -4,7 +4,10 @@
 Projetar e implementar interfaces gráficas, sistemas de design, protótipos visuais, experiência do usuário, componentes atômicos e páginas.
 
 ## Contexto necessário
-- `architecture/frontend.md` — arquitetura do frontend
+- `ui/design-system.md` — tokens (cor, radius, spacing, sombra), fontes, componentes visuais
+- `ui/ui-rules.md` — regras obrigatórias (proibições, padrões de layout, estados)
+- `ui/component-standards.md` — estrutura de componentes, estados, acessibilidade
+- `architecture/frontend.md` — arquitetura do frontend (implementação técnica)
 - `architecture/tech-stack.md` — ferramentas de UI (design system, bundler, CSS framework)
 - `project/overview.md` e `project/vision.md` — público-alvo e propósito
 - `domain/` — regras de negócio que afetam a interface
