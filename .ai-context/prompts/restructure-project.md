@@ -86,6 +86,8 @@ Estrutura esperada:
 ## Prompts reutilizáveis
 ```
 
+**Novo:** inclua `AI_RULES.md` e `.ai-context/rules/` na ordem de leitura e nas regras globais — veja [Adoção de AI_RULES.md](prompts/adopt-ai-rules-structure.md) para o delta exato.
+
 O `AGENTS.md` NÃO deve:
 
 * conter documentação extensa
@@ -133,6 +135,13 @@ Estrutura recomendada:
 │   ├── workflows.md         # fluxos dev/deploy/ops (loop de desenvolvimento, CI)
 │   └── setup.md             # setup do ambiente local (Node LTS, comandos de bootstrap)
 │
+├── rules/                   # base de conhecimento de aprendizado contínuo para agentes
+│   ├── general.md           # regras e lições gerais
+│   ├── backend.md           # regras e lições de backend
+│   ├── frontend.md          # regras e lições de frontend
+│   ├── infrastructure.md    # regras e lições de infraestrutura
+│   └── testing.md           # regras e lições de testes
+│
 ├── ui/                      # camada de design system e UI (IA-first) — ver seção dedicada
 │   ├── design-system.md     # tokens (cor, radius, spacing, sombra), fontes, componentes visuais
 │   ├── ui-rules.md          # regras obrigatórias (proibições, padrões de layout, estados)
@@ -159,7 +168,8 @@ Estrutura recomendada:
 │   └── done.md              # tarefas concluídas (mover ao finalizar)
 │
 └── prompts/                 # prompts reutilizáveis (code-review, debugging, refactor, ...)
-    └── code-review.md       # exemplo: prompt de revisão de código
+    ├── code-review.md       # exemplo: prompt de revisão de código
+    └── adopt-ai-rules-structure.md  # adoção da estrutura AI_RULES em projetos legados
 ```
 
 Você pode adaptar a estrutura conforme o projeto exigir.
@@ -205,6 +215,12 @@ Você pode adaptar a estrutura conforme o projeto exigir.
 | `sessions/current-task.md` | sempre | Template em branco com campos: objetivo atual, tarefas em andamento, próximos passos, decisões recentes, blockers, arquivos relevantes |
 | `tasks/backlog.md` | sempre | Lista de tarefas pendentes |
 | `tasks/done.md` | sempre | Arquivo de tarefas concluídas (mover de backlog ao finalizar) |
+| `AI_RULES.md` (raiz) | sempre | Índice central com guia de consulta por domínio e templates de registro |
+| `.ai-context/rules/general.md` | sempre | Regras permanentes e lições aprendidas de escopo geral |
+| `.ai-context/rules/backend.md` | se houver backend | Regras permanentes e lições aprendidas de backend |
+| `.ai-context/rules/frontend.md` | se houver UI | Regras permanentes e lições aprendidas de frontend |
+| `.ai-context/rules/infrastructure.md` | sempre | Regras permanentes e lições aprendidas de infraestrutura |
+| `.ai-context/rules/testing.md` | sempre | Regras permanentes e lições aprendidas de testes |
 | `prompts/<nome>.md` | opcional | Prompts reutilizáveis (code-review, debugging, refactor) |
 
 ---
@@ -532,15 +548,17 @@ Os agentes devem seguir esta ordem:
 
 1. Ler `AGENTS.md` — entry point obrigatório
 2. Ler contexto essencial na ordem indicada em AGENTS.md
-3. Consultar `sessions/current-task.md` para continuidade entre sessões
-4. Entender arquitetura (`architecture/`)
-5. Entender regras de negócio (`domain/`)
-6. Verificar decisões anteriores (`decisions/`)
-7. Ler o perfil correspondente em `agents/` (se aplicável)
-8. Verificar o backlog em `tasks/backlog.md`
-9. Executar alterações
-10. Atualizar `tasks/` (mover concluídos para `done.md`) e `sessions/current-task.md`
-11. Documentar decisões relevantes em `decisions/`
+3. **Ler `AI_RULES.md` e o(s) arquivo(s) correspondente(s) em `.ai-context/rules/` — seguir todas as regras registradas**
+4. Consultar `sessions/current-task.md` para continuidade entre sessões
+5. Entender arquitetura (`architecture/`)
+6. Entender regras de negócio (`domain/`)
+7. Verificar decisões anteriores (`decisions/`)
+8. Ler o perfil correspondente em `agents/` (se aplicável)
+9. Verificar o backlog em `tasks/backlog.md`
+10. Executar alterações
+11. Atualizar `tasks/` (mover concluídos para `done.md`) e `sessions/current-task.md`
+12. Documentar decisões relevantes em `decisions/`
+13. **Atualizar `.ai-context/rules/` com lições aprendidas durante a tarefa**
 
 ---
 
@@ -576,13 +594,14 @@ Analise o projeto atual e:
 12. atualize scripts de bootstrap se houverem (ex: `copy_stack_extra` paths)
 13. atualize prompts em `prompts/` para referenciar os novos caminhos
 14. crie `sessions/current-task.md` para continuidade entre sessões
-15. corrija configurações de ferramentas (`.vscode/settings.json`, `.editorconfig`, `.prettierrc`)
-16. crie `src/.gitkeep` como placeholder de código-fonte, se não existir
-17. normalize branches em `docs/CONTRIBUTING.md` e `engineering/conventions.md`
-18. atualize `.nvmrc` para a LTS mais recente (ver https://nodejs.org/en/about/previous-releases)
-19. adicione `README.md` com tree view da estrutura `.ai-context/`
-20. execute bootstrap scripts para garantir que funcionam após as mudanças
-21. documente as decisões estruturais tomadas
+15. **crie `AI_RULES.md` (raiz) e `.ai-context/rules/` com arquivos por domínio — veja o prompt `prompts/adopt-ai-rules-structure.md` para o procedimento exato**
+16. corrija configurações de ferramentas (`.vscode/settings.json`, `.editorconfig`, `.prettierrc`)
+17. crie `src/.gitkeep` como placeholder de código-fonte, se não existir
+18. normalize branches em `docs/CONTRIBUTING.md` e `engineering/conventions.md`
+19. atualize `.nvmrc` para a LTS mais recente (ver https://nodejs.org/en/about/previous-releases)
+20. adicione `README.md` com tree view da estrutura `.ai-context/`
+21. execute bootstrap scripts para garantir que funcionam após as mudanças
+22. documente as decisões estruturais tomadas
 
 Ao finalizar:
 
@@ -610,6 +629,19 @@ Antes de concluir, verifique:
 - [ ] Perfis em `agents/` têm seção "Responsabilidade" e "Limites" explícitas
 - [ ] ADRs são numerados sequencialmente (`0001-`, `0002-`, ...)
 - [ ] Não há duplicação de conteúdo (em especial entre `AGENTS.md` e `README.md`, e entre `ui/` e `architecture/frontend.md`)
+
+### Aprendizado contínuo (AI_RULES)
+
+- [ ] `AI_RULES.md` existe na raiz com índice central e guia de consulta por domínio
+- [ ] `.ai-context/rules/general.md` existe com seções "Regras Permanentes" e "Lições Aprendidas"
+- [ ] `.ai-context/rules/backend.md` existe (se houver backend) ou foi omitido
+- [ ] `.ai-context/rules/frontend.md` existe (se houver UI) ou foi omitido
+- [ ] `.ai-context/rules/infrastructure.md` existe
+- [ ] `.ai-context/rules/testing.md` existe
+- [ ] `AGENTS.md` referencia `AI_RULES.md` e `.ai-context/rules/` na ordem de leitura
+- [ ] `AGENTS.md` contém regras globais de consulta obrigatória e atualização do `AI_RULES.md`
+- [ ] `AGENTS.md` contém regra global para atualizar `.ai-context/rules/` ao resolver problemas
+- [ ] O prompt `prompts/adopt-ai-rules-structure.md` foi criado para propagar a estrutura a outros projetos
 
 ### Configuração (raiz do repo)
 

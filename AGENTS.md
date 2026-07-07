@@ -39,14 +39,18 @@ Ponto de entrada para qualquer agente de IA (Claude Code, OpenCode, Antigravity,
 23. `ui/design-system.md` — Tokens visuais e filosofia (se houver UI)
 24. `ui/ui-rules.md` — Regras obrigatórias de interface (se houver UI)
 25. `ui/component-standards.md` — Padrões de componentes e acessibilidade (se houver UI)
-26. `agents/` — Perfis de agentes especializados (consulte conforme seu papel)
-27. `decisions/` — Decisões arquiteturais já tomadas
+26. **`AI_RULES.md` — Base de conhecimento de aprendizado contínuo (leia e siga obrigatoriamente)**
+27. **`.ai-context/rules/` — Arquivos de regras por domínio (consulte o índice em `AI_RULES.md` para saber qual ler)**
+28. `agents/` — Perfis de agentes especializados (consulte conforme seu papel)
+29. `decisions/` — Decisões arquiteturais já tomadas
 
 ## Regras globais
 - Nunca faça commit de segredos (chaves, tokens, senhas).
 - Consulte `architecture/`, `domain/` e `project/` antes de sugerir mudanças estruturais.
 - Mantenha continuidade entre sessões: leia e atualize `sessions/current-task.md`.
 - Agentes especializados têm perfis em `agents/` — leia o seu antes de começar.
+- **Leia `AI_RULES.md` antes de iniciar qualquer tarefa e siga todas as regras registradas.**
+- **Ao resolver um problema, atualize o arquivo de regras do domínio correspondente em `.ai-context/rules/` com a lição aprendida (problema, causa raiz, solução, prevenção).**
 
 ## Fluxo de trabalho
 1. Leia `AGENTS.md` e o contexto essencial
