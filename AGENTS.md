@@ -9,7 +9,7 @@ Ponto de entrada para qualquer agente de IA (Claude Code, OpenCode, Antigravity,
 1. Leia este arquivo primeiro.
 2. Leia `.ai-context/` na ordem recomendada abaixo.
 3. Consulte `sessions/current-task.md` para continuidade entre sessões.
-4. Ao finalizar uma tarefa, mova de `tasks/backlog.md` para `tasks/done.md`.
+4. Ao finalizar uma tarefa, mova-a para `tasks/done.md` (removendo de `tasks/backlog.md` ou `tasks/backlog-dev.md` conforme o caso).
 5. Documente decisões relevantes em `decisions/`.
 
 ## Ordem de leitura do contexto
@@ -51,12 +51,13 @@ Ponto de entrada para qualquer agente de IA (Claude Code, OpenCode, Antigravity,
 - Agentes especializados têm perfis em `agents/` — leia o seu antes de começar.
 - **Leia `AI_RULES.md` antes de iniciar qualquer tarefa e siga todas as regras registradas.**
 - **Ao resolver um problema, atualize o arquivo de regras do domínio correspondente em `.ai-context/rules/` com a lição aprendida (problema, causa raiz, solução, prevenção).**
+- **Prioridade de manutenção sobre desenvolvimento:** nenhum agente de IA pode iniciar tarefa de `tasks/backlog-dev.md` (desenvolvimento/novas funcionalidades) enquanto existirem tarefas pendentes em `tasks/backlog.md` (manutenção). As tarefas de manutenção devem ser concluídas primeiro.
 
 ## Fluxo de trabalho
 1. Leia `AGENTS.md` e o contexto essencial
 2. Entenda arquitetura e regras de negócio
 3. Verifique decisões anteriores em `decisions/`
-4. Verifique o backlog em `tasks/backlog.md`
+4. Verifique o backlog em `tasks/backlog.md` (manutenção) e `tasks/backlog-dev.md` (desenvolvimento)
 5. Execute as alterações
 6. Atualize `tasks/` e `sessions/current-task.md`
 

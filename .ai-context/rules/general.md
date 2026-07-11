@@ -6,7 +6,7 @@ Regras e lições de escopo geral, aplicáveis a qualquer domínio.
 
 | # | Regra | Contexto |
 |---|-------|----------|
-| — | *Nenhuma regra cadastrada ainda.* | — |
+| 1 | `Prioridade de manutenção sobre desenvolvimento:` nenhum agente de IA pode iniciar tarefa de `tasks/backlog-dev.md` (desenvolvimento/novas funcionalidades) enquanto existirem tarefas pendentes em `tasks/backlog.md` (manutenção). As tarefas de manutenção devem ser concluídas primeiro. | Gerenciamento de backlog e priorização de tarefas |
 
 ## Lições Aprendidas
 
